@@ -39,7 +39,7 @@ function background(data){
 
     if (temp < 15){
         body.style.background = "url('../imgs/cold.jpg') no-repeat center center fixed";
-        // body.style.backgroundSize = "cover";
+        body.style.backgroundSize = "cover";
     }
     else if(temp < 10){
         body.style.background = "url('../imgs/gelado.jpg') no-repeat center center fixed";
@@ -53,7 +53,7 @@ function background(data){
         body.style.background = "url('../imgs/fresco.jpg') no-repeat center center fixed";
         body.style.backgroundSize = "cover";
     } else{
-        body.style.background = "url('img/sun.jpg') no-repeat center center fixed";
+        body.style.background = "url('../img/sun.jpg') no-repeat center center fixed";
         body.style.backgroundSize = "cover";
     }
 }
