@@ -15,7 +15,7 @@ async function questServer(inputCity){
 function button(){
     const inputCity = document.querySelector("#nameCity").value;
 
-    questServer(inputCity)
+    questServer(inputCity);
 }
 
 function whiter(data){
@@ -26,9 +26,10 @@ function whiter(data){
     
 
     const city = document.querySelector("#city").innerHTML = "Tempo em "+ data.name;
-    const tempC = document.querySelector("#temp").innerHTML = "Temperatura: " + Math.round(data.main.temp - 273.15) + "°C";
+    const tempC = document.querySelector("#temp").innerHTML = "Temperatura: " + Math.floor(data.main.temp - 273.15) + "°C";
     const climate = document.querySelector("#climate").innerHTML = "Clima: " + data.weather[0].description;
     const humidity = document.querySelector("#humidity").innerHTML = "Umidade: " + data.main.humidity + "%";
+    const favicon = document.querySelector("#favicon").href = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
 
     background(data);
 }

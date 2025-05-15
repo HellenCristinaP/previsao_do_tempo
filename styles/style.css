@@ -48,13 +48,18 @@ table {
 }
 
 body {
-	/* background-color: gray; */
+	background-color: gray; 
     font-family: Arial, sans-serif;
     color: #333;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+}
+
+#climate {
+	/* deixar as primeiras letras maiusculas */
+	text-transform: capitalize;
 }
 
 footer {
@@ -66,7 +71,7 @@ footer {
 
 #container {
 	backdrop-filter: blur(10px);
-	background-color: rgba(0, 0, 0, 0.144);
+	background-color: rgba(0, 0, 0, 0.384);
 	color: white;
 	border-radius: 20px;
 	padding: 20px;
