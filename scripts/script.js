@@ -38,22 +38,22 @@ function background(data){
     const temp = Math.round(data.main.temp - 273.15);
 
     if (temp < 15){
-        body.style.background = "url('../imgs/cold.jpg') no-repeat center center fixed";
+        body.style.background = "url('imgs/cold.jpg') no-repeat center center fixed";
         body.style.backgroundSize = "cover";
     }
     else if(temp < 10){
-        body.style.background = "url('../imgs/gelado.jpg') no-repeat center center fixed";
+        body.style.background = "url('imgs/gelado.jpg') no-repeat center center fixed";
         body.style.backgroundSize = "cover";
     }
     else if(temp < 20){
-        body.style.background = "url('../imgs/medio.jpg') no-repeat center center fixed";
+        body.style.background = "url('imgs/medio.jpg') no-repeat center center fixed";
         body.style.backgroundSize = "cover";
     }
     else if(temp < 30){
-        body.style.background = "url('../imgs/fresco.jpg') no-repeat center center fixed";
+        body.style.background = "url('imgs/fresco.jpg') no-repeat center center fixed";
         body.style.backgroundSize = "cover";
     } else{
-        body.style.background = "url('../img/sun.jpg') no-repeat center center fixed";
+        body.style.background = "url('img/sun.jpg') no-repeat center center fixed";
         body.style.backgroundSize = "cover";
     }
 }
