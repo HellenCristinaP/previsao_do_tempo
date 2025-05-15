@@ -53,7 +53,7 @@ function background(data){
         body.style.background = "url('imgs/fresco.jpg') no-repeat center center fixed";
         body.style.backgroundSize = "cover";
     } else{
-        body.style.background = "url('img/sun.jpg') no-repeat center center fixed";
+        body.style.background = "url('imgs/sun.jpg') no-repeat center center fixed";
         body.style.backgroundSize = "cover";
     }
 }
