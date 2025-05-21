@@ -30,7 +30,7 @@ function whiter(data, inputCity) {
     display.style.display = "block";
 
 
-    const city = document.querySelector("#city").innerHTML = "Tempo em " + inputCity[0].toUpperCase() + inputCity.substring(1);
+    const city = document.querySelector("#city").innerHTML = "Tempo em " + data.name.toUpperCase();
     const tempC = document.querySelector("#temp").innerHTML = "Temperatura: " + Math.floor(data.main.temp) + "°C";
     const climate = document.querySelector("#climate").innerHTML = "Clima: " + data.weather[0].description;
     const humidity = document.querySelector("#humidity").innerHTML = "Umidade: " + data.main.humidity + "%";
