@@ -41,7 +41,7 @@ function whiter(data, inputCity) {
 
 function background(data) {
     const body = document.querySelector("body");
-    const temp = Math.round(data.main.temp - 273.15);
+    const temp = Math.round(data.main.temp);
 
     if (temp < 15) {
         body.style.background = "url('imgs/cold.jpg') no-repeat center center fixed";
