@@ -1,9 +1,3 @@
-// require('dotenv').config()
-
-// const key = process.env.OPENWEATHER_API_KEY;
-
-// console.log(key);
-
 // avisando que vamos mexer com api - async
 async function questServer(inputCity) {
     // espere até o servidor responder - await
@@ -14,7 +8,7 @@ async function questServer(inputCity) {
 
     console.log(data);
 
-    whiter(data, inputCity);
+    whiter(data);
 }
 
 function button() {
@@ -23,14 +17,14 @@ function button() {
     questServer(inputCity);
 }
 
-function whiter(data, inputCity) {
+function whiter(data) {
     //pegue os dados da api e coloque no html, vai em data, em main, em temp; por exemplo
     const display = document.querySelector("#dados");
 
     display.style.display = "block";
 
 
-    const city = document.querySelector("#city").innerHTML = "Tempo em " + data.name.toUpperCase(0);
+    const city = document.querySelector("#city").innerHTML = "Tempo em " + data.name;
     const tempC = document.querySelector("#temp").innerHTML = "Temperatura: " + Math.floor(data.main.temp) + "°C";
     const climate = document.querySelector("#climate").innerHTML = "Clima: " + data.weather[0].description;
     const humidity = document.querySelector("#humidity").innerHTML = "Umidade: " + data.main.humidity + "%";

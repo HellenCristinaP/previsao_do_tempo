@@ -7,7 +7,21 @@
   },
   "dependencies": {
     "axios": "^1.9.0",
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0"
-  }
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "google-closure-compiler": "^20260125.0.0"
+  },
+  "description": "Você digita a cidade, clica no botão de \"Buscar\" e aparece algumas informações. Como: Umidade, temperatura e clima.",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HellenCristinaP/previsao_do_tempo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HellenCristinaP/previsao_do_tempo/issues"
+  },
+  "homepage": "https://github.com/HellenCristinaP/previsao_do_tempo#readme"
 }

@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ path: './.env' });
 const express = require('express');
 const axios = require('axios');
 const app = express();
@@ -11,15 +11,7 @@ app.get('/api/weather', async (req, res) => {
   const apiKey = process.env.OPENWEATHER_API_KEY;
 
   try {
-    const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather`, {
-      params: {
-        q: city,
-        appid: apiKey,
-        lang: 'pt_br',
-        units: 'metric'
-      }
-    });
-
+    const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=pt_br`);
     res.json(response.data);
   } catch (error) {
     res.status(500).json({ error: 'Erro ao buscar clima', details: error.message });
