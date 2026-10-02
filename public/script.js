@@ -6,6 +6,7 @@ async function questServer(inputCity) {
     }
 
     try {
+        //novo aprendizado - ao inves de implementar colocar a string direto para a URL, utilizei o URLSearchParams para criar a query string de forma mais segura e legível
         const query = new URLSearchParams({ city });
         const response = await fetch(`/api/weather?${query}`);
         const data = await response.json();
@@ -20,7 +21,7 @@ async function questServer(inputCity) {
             return;
         }
 
-        whiter(data);
+        getWeather(data);
     } catch (error) {
         console.error("Erro ao buscar o clima:", error);
         alert("Não foi possível buscar o clima. Tente novamente.");
@@ -33,7 +34,7 @@ function button() {
     questServer(inputCity);
 }
 
-function whiter(data) {
+function getWeather(data) {
     const display = document.querySelector("#dados");
 
     display.style.display = "block";

@@ -1,7 +1,7 @@
 const ClosureCompiler = require('google-closure-compiler').compiler;
 
 const compilerConfig = {
-  js: ['./public/script.js'], // Verifique se os caminhos estão corretos
+  js: ['./public/script.js'],
   compilation_level: 'SIMPLE',
   js_output_file: './public/output.js',
   debug: true
