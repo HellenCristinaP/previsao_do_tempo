@@ -1,8 +1,13 @@
-// avisando que vamos mexer com api - async
 async function questServer(inputCity) {
     // espere até o servidor responder - await
     // fetch é uma função que faz requisições para APIs
     // then - quando a requisição for concluída, faça algo, que é transformar a resposta em json
+
+    if(inputCity === "") {
+        alert("Digite o nome da cidade");
+        return;
+    }
+    
     const response = await fetch(`/api/weather?city=${inputCity}`);
     const data = await response.json();
 
@@ -18,7 +23,11 @@ function button() {
 }
 
 function whiter(data) {
-    //pegue os dados da api e coloque no html, vai em data, em main, em temp; por exemplo
+        if (data.cod === "404") {
+        alert("Cidade não encontrada");
+        return;
+    }
+
     const display = document.querySelector("#dados");
 
     display.style.display = "block";
