@@ -1,14 +1,31 @@
-// avisando que vamos mexer com api - async
 async function questServer(inputCity) {
-    // espere até o servidor responder - await
-    // fetch é uma função que faz requisições para APIs
-    // then - quando a requisição for concluída, faça algo, que é transformar a resposta em json
-    const response = await fetch(`/api/weather?city=${inputCity}`);
-    const data = await response.json();
+    const city = inputCity.trim();
+    if (city === "") {
+        alert("Digite o nome da cidade");
+        return;
+    }
 
-    console.log(data);
+    try {
+        //novo aprendizado - ao inves de implementar colocar a string direto para a URL, utilizei o URLSearchParams para criar a query string de forma mais segura e legível
+        const query = new URLSearchParams({ city });
+        const response = await fetch(`/api/weather?${query}`);
+        const data = await response.json();
 
-    whiter(data);
+        if (!response.ok) {
+            alert(data.error || "Não foi possível buscar o clima.");
+            return;
+        }
+
+        if (!data.main || !Array.isArray(data.weather) || !data.weather[0]) {
+            alert("A resposta do serviço de clima está incompleta.");
+            return;
+        }
+
+        getWeather(data);
+    } catch (error) {
+        console.error("Erro ao buscar o clima:", error);
+        alert("Não foi possível buscar o clima. Tente novamente.");
+    }
 }
 
 function button() {
@@ -17,8 +34,7 @@ function button() {
     questServer(inputCity);
 }
 
-function whiter(data) {
-    //pegue os dados da api e coloque no html, vai em data, em main, em temp; por exemplo
+function getWeather(data) {
     const display = document.querySelector("#dados");
 
     display.style.display = "block";
