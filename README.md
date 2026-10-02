@@ -1,16 +1,17 @@
 # Previsão do Tempo
 
 Você digita a cidade, clica no botão de "Buscar" e aparece algumas informações. Como: Umidade, temperatura e clima.
-
-Dependendo do clima, o favicon muda de imagem e dependendo da temperatura, aparece um fundo diferente(Uma coisa que no projeto original não tem)
+Dependendo do clima, o favicon muda de imagem e dependendo da temperatura, aparece um fundo diferente(Uma coisa que no projeto original não tem).
 
 Um projeto para aprender a acrescentar dados de uma API, ensinado no vídeo [DevClub - Criando App de Previsão do Tempo](https://youtu.be/qxzqEuAOYZ4?si=psdvGRU2slGO9QXs).
 
+Observação: Se caso não houver cidade escrita ou uma cidade inválida, o `script.js` fará o tratamento de erro! Algo que também não foi feito na aula.
+
 ## Como funciona(Mais detalhado)?
 
-Quando digita alguma cidade e clicar "Buscar", verifica essa informação(GET) na API(Open Weather) e pega as informações, de acordo com o que está requerindo(Cidade - inputCity), de acordo com nossos requisitos(Linguagem em Português). Para acessar as informações da API, precisa-se de uma chave, onde você coloca em um arquivo env, um arquivo para guardar dados sensíveis, sem precisão de expor no código
+Quando digita alguma cidade e clicar "Buscar", verifica essa informação(GET) na API(Open Weather) e pega as informações, de acordo com o que está requerindo(Cidade - inputCity), de acordo com nossos requisitos(Linguagem em Português).
 
-Configure `OPENWEATHER_API_KEY` no arquivo `.env` na raiz do projeto. Para gerar o JavaScript servido pela aplicação, execute `npm run build`; depois, inicie o servidor com `npm start`.
+Para acessar essas informações da API, precisa criar um arquivo `.env` com sua chave da API, com o nome da variável assim: `OPENWEATHER_API_KEY`. Para gerar o JavaScript servido pela aplicação, execute `npm run build`; depois, inicie o servidor com `npm start`.
 
 ## Tecnologias usadas
 ### Linguagens:
