@@ -1,19 +1,30 @@
 async function questServer(inputCity) {
-    // espere até o servidor responder - await
-    // fetch é uma função que faz requisições para APIs
-    // then - quando a requisição for concluída, faça algo, que é transformar a resposta em json
-
-    if(inputCity === "") {
+    const city = inputCity.trim();
+    if (city === "") {
         alert("Digite o nome da cidade");
         return;
     }
-    
-    const response = await fetch(`/api/weather?city=${inputCity}`);
-    const data = await response.json();
 
-    console.log(data);
+    try {
+        const query = new URLSearchParams({ city });
+        const response = await fetch(`/api/weather?${query}`);
+        const data = await response.json();
 
-    whiter(data);
+        if (!response.ok) {
+            alert(data.error || "Não foi possível buscar o clima.");
+            return;
+        }
+
+        if (!data.main || !Array.isArray(data.weather) || !data.weather[0]) {
+            alert("A resposta do serviço de clima está incompleta.");
+            return;
+        }
+
+        whiter(data);
+    } catch (error) {
+        console.error("Erro ao buscar o clima:", error);
+        alert("Não foi possível buscar o clima. Tente novamente.");
+    }
 }
 
 function button() {
@@ -23,11 +34,6 @@ function button() {
 }
 
 function whiter(data) {
-        if (data.cod === "404") {
-        alert("Cidade não encontrada");
-        return;
-    }
-
     const display = document.querySelector("#dados");
 
     display.style.display = "block";

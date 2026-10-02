@@ -10,6 +10,8 @@ Um projeto para aprender a acrescentar dados de uma API, ensinado no vídeo [Dev
 
 Quando digita alguma cidade e clicar "Buscar", verifica essa informação(GET) na API(Open Weather) e pega as informações, de acordo com o que está requerindo(Cidade - inputCity), de acordo com nossos requisitos(Linguagem em Português). Para acessar as informações da API, precisa-se de uma chave, onde você coloca em um arquivo env, um arquivo para guardar dados sensíveis, sem precisão de expor no código
 
+Configure `OPENWEATHER_API_KEY` no arquivo `.env` na raiz do projeto. Para gerar o JavaScript servido pela aplicação, execute `npm run build`; depois, inicie o servidor com `npm start`.
+
 ## Tecnologias usadas
 ### Linguagens:
 
